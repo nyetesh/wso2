@@ -1,0 +1,20 @@
+provider:
+  host: https://localhost:9443
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          wso2:
+            client-name: spring-wso2-demo-app
+            client-id: hfjXoSlwATsSZk0of89_GwhHOgAa #Change client-id
+            client-secret: b55QiUZzygf4CtXmaAO2ft_q1Voa # Change client-secret
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          wso2:
+            issuer-uri: ${provider.host}/oauth2/token
+
+thymeleaf:
+  cache: false
